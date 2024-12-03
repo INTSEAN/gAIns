@@ -42,6 +42,15 @@ struct HomeView: View {
                         )
                         .padding()
                     
+                    
+                    Image("Logo") // Replace with the name of your image asset
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 100))
+                        .padding()
+
+//                    Spacer() // Pushes the content to the top
                     Spacer() // Pushes the quote to the top
                 }
                 
