@@ -111,7 +111,7 @@ struct SpotifyView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .background(Image("background_image").resizable().scaledToFill())
+            .background(Image("background_image").resizable().frame(width: .infinity, height: .infinity))
             .edgesIgnoringSafeArea(.all)
         }
     }

@@ -15,7 +15,7 @@ struct SpotifyPage: View {
                 Image("landing_background_image") // Replace with your landing page background image
                     .resizable()
                     .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.top)
                     .frame(maxHeight: .infinity)
 
                 Spacer()
