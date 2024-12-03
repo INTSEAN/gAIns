@@ -55,7 +55,7 @@ struct HomeView: View {
                     } label: { EmptyView() }
                     
                     NavigationLink(tag: 2, selection: $selectedTab) {
-                        Text("Health Stats - TODO")
+                        HealthView()
                     } label: { EmptyView() }
                 }
                 
