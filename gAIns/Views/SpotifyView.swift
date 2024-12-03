@@ -13,26 +13,21 @@ struct SpotifyView: View {
     @State private var isStartedAnimatedMoodResponse:Bool = false
     @State private var clearableViewState: Bool = false
 
-    @State private var songs: [Song] = [] // Define a Song struct with name, image, and Spotify URL properties
+    @State private var songs: [Song] = []
     @State private var profileImage: Image? = Image("profile_image")
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
             VStack(spacing: 1) {
-                HStack {
-                    NavigationLink(destination: SpotifyPage()){
-                        Image(systemName: "arrow.left.circle.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                            .foregroundColor(.green)
-                    }
-                    Spacer()
-                }
-                    HStack(spacing:1) {
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+                    VStack(spacing:1) {
                         if let profileImage = profileImage {
-                            NavigationLink(destination: SettingsView(profileImage: $profileImage)) {
+                            NavigationLink(destination:
+                                SettingsView(profileImage: $profileImage)) {
                                 profileImage
                                     .resizable()
                                     .frame(width: 60, height: 60)
@@ -40,9 +35,10 @@ struct SpotifyView: View {
                                     .padding()
                             }
                         }
+                        Spacer()
                         Text("Let's Start Your \(timeOfDay()) Mood Mix")
                             .font(.system(size: 26, weight: .bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .padding()
                             .offset(x:-15)
                     }
@@ -69,18 +65,16 @@ struct SpotifyView: View {
                                    }
                                }
                     Button(action: {
-                        // Call the ChatGPT API and update moodResponse and songs
-                        // Implement your API calls and logic here
                         moodResponse = ""
                         songs = []
                         simulateAPIResponse()
                     }) {
-                        Image(systemName: "paperplane.fill") // Use a paper plane icon or any other send icon
+                        Image(systemName: "paperplane.fill")
                                 .resizable()
                                 .frame(width: 10, height: 10)
                                 .padding()
                                 .foregroundColor(.white)
-                                .background(Color.green) // Set the send button background color
+                                .background(Color.green)
                                 .clipShape(Circle())
                                 .offset(x: -20)
 

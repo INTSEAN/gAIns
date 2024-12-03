@@ -12,7 +12,7 @@ struct gAInsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SpotifyView()
+            HomeView()
         }
     }
 }
