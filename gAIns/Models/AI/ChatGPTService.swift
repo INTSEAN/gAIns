@@ -65,7 +65,7 @@ struct ChatGPTUsage: Decodable {
 
 class ChatGPTService {
     
-    let apiKey = "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"
+    let apiKey = "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"
     private let endpoint = "https://api.openai.com/v1/chat/completions"
 
     func getChatGPTResponse(userInput: String, completion: @escaping (Result<ChatGPTResponse, Error>) -> Void) {

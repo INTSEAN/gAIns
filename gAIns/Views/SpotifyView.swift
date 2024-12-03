@@ -23,8 +23,8 @@ struct SpotifyView: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                Spacer()
-                    VStack(spacing:1) {
+  
+                    VStack(spacing:15) {
                         if let profileImage = profileImage {
                             NavigationLink(destination:
                                 SettingsView(profileImage: $profileImage)) {
@@ -35,7 +35,6 @@ struct SpotifyView: View {
                                     .padding()
                             }
                         }
-                        Spacer()
                         Text("Let's Start Your \(timeOfDay()) Mood Mix")
                             .font(.system(size: 26, weight: .bold))
                             .foregroundColor(.black)
