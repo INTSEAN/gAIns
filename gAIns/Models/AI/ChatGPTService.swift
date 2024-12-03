@@ -65,7 +65,7 @@ struct ChatGPTUsage: Decodable {
 
 class ChatGPTService {
     
-    private let apiKey = ""
+    let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] ?? ""
     private let endpoint = "https://api.openai.com/v1/chat/completions"
 
     func getChatGPTResponse(userInput: String, completion: @escaping (Result<ChatGPTResponse, Error>) -> Void) {
