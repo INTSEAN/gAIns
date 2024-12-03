@@ -16,6 +16,9 @@ struct SpotifyView: View {
     @State private var songs: [Song] = []
     @State private var profileImage: Image? = Image("profile_image")
     @Environment(\.presentationMode) var presentationMode
+    
+    @FocusState private var isTextEditorFocused: Bool
+
 
     var body: some View {
         NavigationView {
@@ -55,6 +58,7 @@ struct SpotifyView: View {
                                                .stroke(Color.green, lineWidth: 1)
                                        )
                                        .padding(.leading, 15)
+                                       .focused($isTextEditorFocused)
 
                                    if userInput.isEmpty {
                                        Text("\(emoji()) How are you feeling today?")
@@ -67,6 +71,7 @@ struct SpotifyView: View {
                         moodResponse = ""
                         songs = []
                         simulateAPIResponse()
+                        isTextEditorFocused = false
                     }) {
                         Image(systemName: "paperplane.fill")
                                 .resizable()
@@ -105,7 +110,6 @@ struct SpotifyView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(Image("background_image").resizable())
-            .frame(width: .infinity, height: .infinity)
             .edgesIgnoringSafeArea(.all)
         }
     }
