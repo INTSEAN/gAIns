@@ -46,6 +46,7 @@ struct HomeView: View {
                 
                 // Navigation links
                 Group {
+                
                     NavigationLink(tag: 0, selection: $selectedTab) {
                         Text("Workout View - TODO")
                     } label: { EmptyView() }
@@ -56,6 +57,8 @@ struct HomeView: View {
                     
                     NavigationLink(tag: 2, selection: $selectedTab) {
                         HealthView()
+                        
+                        
                     } label: { EmptyView() }
                 }
                 

@@ -1,18 +1,13 @@
-//
-//  gAInsApp.swift
-//  gAIns
-//
-//  Created by SEAN DONOVAN on 11/14/24.
-//
-
 import SwiftUI
 
 @main
 struct gAInsApp: App {
-    
+    @StateObject private var healthKitManager = HealthKitManager() // Shared instance of HealthKitManager
+
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView() // Your root view
+                .environmentObject(healthKitManager) // Inject HealthKitManager
         }
     }
 }
